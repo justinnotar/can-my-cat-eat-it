@@ -1,4 +1,5 @@
 import '../assets/home.css'
+import '../App.css'
 import React from 'react';
 import {content} from '../assets/content'
 

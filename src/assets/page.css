@@ -1,3 +1,17 @@
+html {
+  background-color: var(--secondary);
+}
+
+a, a:visited, a:hover, a:active {
+  color: var(--white);
+}
+
+svg {
+  position: absolute;
+  z-index: -1;
+  min-width: 600px;
+}
+
 .page {
   height: 100vh;
   width: 70vw;
@@ -6,6 +20,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: var(--secondary);
 }
 
 .page-title {
@@ -16,10 +32,22 @@
   font-size: 70px;
 }
 
+#no {
+  color: var(--red);
+}
+
+#yes {
+  color: var(--green);
+}
+
+#maybe {
+  color: var(--yellow);
+}
+
 .page-text {
-  margin-top: 10px;
+  max-width: 200px;
 }
 
 .page-source {
-  margin-top: 35px;
+  color: var(--white);
 }
