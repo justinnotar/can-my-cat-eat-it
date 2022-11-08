@@ -2,7 +2,7 @@ import '../assets/page.css';
 import '../App.css'
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
-import {content} from '../assets/content'
+import {pages} from '../assets/content'
 
 function Page() {
   const [name, setName] = useState();
@@ -13,8 +13,8 @@ function Page() {
   const id = useParams().id;
 
   useEffect(() => {
-    for (var i = 0; i < content.length; i++) {
-      var page = content[i];
+    for (var i = 0; i < pages.length; i++) {
+      var page = pages[i];
       if (page.url === id) {
         setName(page.name);
         setAnswer(page.answer);
