@@ -18,8 +18,9 @@ html {
   font-size: 50px;
 }
 
-.suggestions {
-  text-align: center;
-  margin-top: 35px;
-  color: var(--white);
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
 }
