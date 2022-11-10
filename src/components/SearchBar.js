@@ -27,19 +27,27 @@ export default function SearchBar() {
                         placeholder="Search..."
                         />
                     </div>
-                    <Combobox.Options static className="max-h-40 overflow-y-auto">
-                        {filteredPages.map((page) => (
-                            <Combobox.Option key={page.url} className="pt-0.5 pb-0.5 mr-3">
-                                {({ active }) => (
-                                    <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url} target="_blank">
-                                    <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-purple-100 rounded-lg` : ``}`}>
-                                        {page.name}
-                                    </div>
-                                    </a>
-                                )}
-                            </Combobox.Option>
-                        ))}
-                    </Combobox.Options>
+                    {filteredPages.length > 0 && (
+                        <Combobox.Options static className="pt-1 max-h-40 overflow-y-auto">
+                            {filteredPages.map((page) => (
+                                <Combobox.Option key={page.url} className="pt-0.5 pb-0.5 mr-3">
+                                    {({ active }) => (
+                                        <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url} target="_blank">
+                                        <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-purple-100 rounded-lg` : ``}`}>
+                                            {page.name}
+                                        </div>
+                                        </a>
+                                    )}
+                                </Combobox.Option>
+                            ))}
+                        </Combobox.Options>
+                    )}
+                    {
+                        query && filteredPages.length == 0 && 
+                        <div className="pt-1.5 pb-0.5">
+                            <p className="pl-2 pt-1 pb-1">no results found</p>
+                        </div>
+                    }
                 </div>
             </Combobox>
         </div>
