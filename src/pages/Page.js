@@ -1,8 +1,7 @@
-import '../assets/page.css';
 import '../App.css'
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom';
-import {pages} from '../assets/content'
+import { useParams } from 'react-router-dom';
+import { pages } from '../assets/content'
 
 function Page() {
   const [name, setName] = useState();
