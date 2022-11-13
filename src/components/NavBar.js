@@ -4,9 +4,9 @@ import { Dialog } from '@headlessui/react'
 import { XIcon } from '@heroicons/react/outline'
 
 const navigation = [
-    { name: 'submit suggestion', href: '/submit' },
-    { name: 'contact', href: '/contact' },
-    { name: 'legal disclosures', href: '/legal' },
+    { name: 'about us', href: '/about' },
+    { name: 'submit a food', href: '/submit' },
+    { name: 'legal stuff', href: '/legal' },
 ]
 
 export default function NavBar() {
