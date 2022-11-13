@@ -1,8 +1,8 @@
 export default function Logo() {
     return (
-        <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
-            <img className="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
-        </a>
-    )
+        <a href="#" className="flex flex-row items-baseline">
+            <img className="h-9" src="https://i.ibb.co/WHJhTjz/favicon.png" alt="canmycateat.it" border="0"/>
+            <span className="text-5xl font-bold text-purple-900 tracking-tight">.it</span>
+        </a>    
+        )
 }
