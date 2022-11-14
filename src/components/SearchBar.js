@@ -1,7 +1,7 @@
 import { useState } from 'react'
+import { pages } from '../assets/content'
 import { Combobox } from '@headlessui/react'
 import { SearchIcon } from '@heroicons/react/outline'
-import { pages } from '../assets/content'
 
 export default function SearchBar() {
 
@@ -28,7 +28,7 @@ export default function SearchBar() {
                         {filteredPages.map((page) => (
                             <Combobox.Option key={page.url} className="mr-3">
                                 {({ active }) => (
-                                    <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url} target="_blank">
+                                    <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url}>
                                         <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-purple-100 rounded-lg` : ``}`}>
                                             {page.name}
                                         </div>

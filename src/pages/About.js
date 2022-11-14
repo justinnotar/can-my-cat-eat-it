@@ -1,7 +1,6 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import TopBlur from '../components/TopBlur'
-import SearchBar from '../components/SearchBar'
 import BottomBlur from '../components/BottomBlur'
 
 export default function Home() {
@@ -12,11 +11,10 @@ export default function Home() {
       <main>
         <div className="pt-[25vh] relative mx-auto max-w-3xl h-screen">
             {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
-            <h1 className="text-5xl p-4 pt-0 font-bold text-purple-900 text-center">
-              can my 🐈 eat <b><i className='text-purple-500'>xyz</i></b>&nbsp;?
+            <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center">
+              about us
             </h1>
             <BottomBlur />
-            <SearchBar />
         </div>
       </main>
     </div>

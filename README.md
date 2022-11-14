@@ -1,4 +1,4 @@
-# Can my cat eat it? by Justin Notarfrancesco
+# Can my cat eat xyz? by Justin Notarfrancesco
 
 To view locally, you can run `npm start` and open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
