@@ -1,3 +1,4 @@
+import '../index.css'
 import { useState } from 'react'
 import { pages } from '../assets/content'
 import { Combobox } from '@headlessui/react'
