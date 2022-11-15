@@ -30,7 +30,7 @@ export default function SearchBar() {
                             <Combobox.Option key={page.url} className="mr-3">
                                 {({ active }) => (
                                     <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url}>
-                                        <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-purple-100 rounded-lg` : ``}`}>
+                                        <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-white rounded-lg` : ``}`}>
                                             {page.name}
                                         </div>
                                     </a>
