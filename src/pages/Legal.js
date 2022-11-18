@@ -5,7 +5,7 @@ import BottomBlur from '../components/BottomBlur'
 
 export default function Home() {
   return (
-    <div className="isolate bg-purple-100 overflow-y-hidden min-h-screen">
+    <div className="isolate bg-purple-100 overflow-y-auto min-h-screen">
       <TopBlur />
       <NavBar />
       <main>
@@ -23,8 +23,7 @@ export default function Home() {
             <h1 className="text-3xl text-center">professional disclaimer</h1>
             <p className="p-4">The Site cannot and does not contain medical/health advice. The medical/health information is provided for general informational and educational purposes only and is not a substitute for professional advice. Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. We do not provide any kind of medical/health advice.
             THE USE OR RELIANCE OF ANY INFORMATION CONTAINED ON THE SITE IS SOLELY AT YOUR OWN RISK.</p>
-
-            <BottomBlur />
+            {/* <BottomBlur /> */}
         </div>
       </main>
     </div>
