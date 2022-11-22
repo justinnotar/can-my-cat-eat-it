@@ -1,20 +1,22 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 import TopBlur from '../components/TopBlur'
+import SubmitForm from '../components/SubmitForm'
 import BottomBlur from '../components/BottomBlur'
 
-export default function Home() {
+export default function Submit() {
   return (
     <div className="isolate bg-purple-100 overflow-y-hidden min-h-screen">
       <TopBlur />
+      <BottomBlur />
       <NavBar />
       <main>
-        <div className="pt-[25vh] relative mx-auto max-w-3xl h-screen">
+        <div className="pt-[15vh] relative mx-auto max-w-3xl sm:pt-[25vh]">
             {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
-            <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center">
-              submit a food
+            <h1 className="text-5xl p-4 pt-0 font-bold text-purple-900 text-center">
+              can my 🐈 eat <b><i className='text-purple-500'>xyz</i></b>&nbsp;?
             </h1>
-            <BottomBlur />
+            <SubmitForm />
         </div>
       </main>
     </div>
