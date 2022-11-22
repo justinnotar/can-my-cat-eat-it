@@ -14,7 +14,7 @@ export default function Submit() {
         <div className="pt-[15vh] relative mx-auto max-w-3xl sm:pt-[25vh]">
             {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
             <h1 className="text-5xl p-4 pt-0 font-bold text-purple-900 text-center">
-              can my 🐈 eat <b><i className='text-purple-500'>xyz</i></b>&nbsp;?
+              submit a food
             </h1>
             <SubmitForm />
         </div>
