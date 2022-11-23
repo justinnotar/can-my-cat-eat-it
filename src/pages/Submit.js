@@ -11,9 +11,9 @@ export default function Submit() {
       <BottomBlur />
       <NavBar />
       <main>
-        <div className="pt-[15vh] relative mx-auto max-w-3xl sm:pt-[25vh]">
+        <div className="relative mx-auto max-w-3xl">
             {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
-            <h1 className="text-5xl p-4 pt-0 font-bold text-purple-900 text-center">
+            <h1 className="text-5xl p-4 pt-10 font-bold text-purple-900 text-center">
               submit a food
             </h1>
             <SubmitForm />
