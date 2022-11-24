@@ -20,8 +20,8 @@ export default function SearchBar() {
                     onChange={(event) => {
                         setQuery(event.target.value)
                     }}
-                    className="p-2 w-full bg-transparent focus:ring-0 outline-0 text-gray-800 placeholder-gray-500 h-8"
-                    placeholder="search..."
+                    className="p-2 w-full bg-transparent focus:ring-0 outline-0 text-gray-800 placeholder-gray-400 h-8"
+                    placeholder="search"
                     />
                 </div>
                 {filteredPages.length > 0 && (
