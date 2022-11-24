@@ -8,7 +8,7 @@ export default function SubmitForm() {
         as="div" 
         className="p-10 pt-4 pb-20 overflow-y-auto">
             <div className="p-4 max-w-xl mx-auto text-xl rounded-xl text-purple-900 bg-white ring-1 ring-black/5 shadow-2xl divide-y divide-purple-300">
-                <form class="w-full max-w-lg">
+                <form class="w-full max-w-xl">
                     <div class="flex flex-wrap -mx-3 mb-6">
                         <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
                             <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -18,7 +18,7 @@ export default function SubmitForm() {
                             {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
                         </div>
                         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                            <label class="block  tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                            <label class="block tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
                                 can your cat eat it?
                             </label>
                             <div class="relative">
@@ -51,14 +51,14 @@ export default function SubmitForm() {
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                             <label class="block  tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-name">
                                 name
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-name" type="text" placeholder="justin" />
                         </div>
-                        <div class="w-full md:w-2/3 px-3 md:mb-0">
-                            <button class="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">
+                        <div class="md:w-1/2 px-3 md:mb-0">
+                            <button class="w-full shadow bg-purple-900 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="button">
                             submit
                             </button>
                         </div>
