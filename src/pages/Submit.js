@@ -13,7 +13,7 @@ export default function Submit() {
       <main>
         <div className="relative mx-auto max-w-3xl">
             {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
-            <h1 className="text-5xl p-4 pt-10 font-bold text-purple-900 text-center">
+            <h1 className="text-5xl p-4 pt-[12.5vh] font-bold text-purple-900 text-center">
               submit a food
             </h1>
             <SubmitForm />
