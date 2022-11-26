@@ -57,9 +57,7 @@ export default function SubmitForm() {
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-name" type="text" placeholder="justin" />
                         </div>
-
-                        {/* TODO: fix submit button size on half screen */}
-                        <div class="md:w-1/2 px-3 md:mb-0">
+                        <div class="w-full md:w-1/2 px-3 md:mb-0">
                             <button class="w-full shadow bg-purple-900 hover:bg-purple-300 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="button">
                             submit
                             </button>
