@@ -53,10 +53,11 @@ export default function SubmitForm() {
                     <div class="flex flex-wrap -mx-3 mb-2">
                         <div class="w-full md:w-1/2 px-3  md:mb-0">
                             <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-name">
-                                name
+                                name (optional)
                             </label>
                             <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-name" type="text" placeholder="justin" />
                         </div>
+                        {/* TODO: make button functional with form */}
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
                             <button class="w-full shadow bg-purple-900 hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="button">
                             submit
