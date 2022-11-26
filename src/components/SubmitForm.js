@@ -9,20 +9,20 @@ export default function SubmitForm() {
         className="p-10 pt-4 pb-20 overflow-y-auto">
             <div className="p-4 max-w-xl mx-auto text-xl rounded-xl text-purple-900 bg-white ring-1 ring-black/5 shadow-2xl divide-y divide-purple-300">
                 <form class="w-full max-w-xl">
-                    <div class="flex flex-wrap -mx-3 mb-6">
-                        <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+                    <div class="flex flex-wrap -mx-3">
+                        <div class="w-full md:w-2/3 px-3 md:mb-0">
                             <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-first-name">
                                 food item
                             </label>
                             <input class="required appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-first-name" type="text" placeholder="peanut butter" />
                             {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
                         </div>
-                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                        <div class="w-full md:w-1/3 px-3 md:mb-0">
                             <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-state">
                                 can your cat eat it?
                             </label>
                             <div class="relative">
-                                <select class="required block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-800 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-state">
+                                <select class="required block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-800 py-3 px-4 pr-8 mb-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-state">
                                     <option>yes</option>
                                     <option>no</option>
                                     <option>maybe</option>
@@ -33,7 +33,7 @@ export default function SubmitForm() {
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap -mx-3">
                         <div class="w-full px-3">
                         <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
                             reason
@@ -42,7 +42,7 @@ export default function SubmitForm() {
                         {/* <p class="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
                         </div>
                     </div>
-                    <div class="flex flex-wrap -mx-3 mb-6">
+                    <div class="flex flex-wrap -mx-3">
                         <div class="w-full px-3">
                         <label class="block  tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
                             source url
@@ -51,7 +51,7 @@ export default function SubmitForm() {
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <div class="w-full md:w-1/2 px-3  md:mb-0">
                             <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-name">
                                 name
                             </label>
