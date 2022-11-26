@@ -31,7 +31,7 @@ export default function NavBar() {
           </div>
           <div className="hidden lg:flex lg:min-w-0 lg:flex-2 lg:justify-center lg:gap-x-12">
             {navigation.map((item) => (
-              <a key={item.name} href={item.href} className="font-semibold text-purple-900 hover:text-purple-900">
+              <a key={item.name} href={item.href} className="font-semibold text-purple-900 hover:text-purple-500">
                 {item.name}
               </a>
             ))}
