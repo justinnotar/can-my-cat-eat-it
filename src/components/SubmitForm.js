@@ -60,7 +60,7 @@ export default function SubmitForm() {
                         </div>
                         {/* TODO: make button functional with form */}
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
-                            <input class="w-full shadow bg-purple-900 hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="submit" value="submit"/>
+                            <input class="w-full shadow bg-purple-900 cursor-pointer hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="submit" value="submit"/>
                         </div>
                     </div>
                 </form>
