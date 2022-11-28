@@ -39,3 +39,7 @@ input:-webkit-autofill:focus {
 .comboboxMaxHeight {
   max-height: 19.3rem;
 }
+
+:invalid {
+  color: rgba(156, 163, 175);
+}

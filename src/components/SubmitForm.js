@@ -14,7 +14,7 @@ export default function SubmitForm() {
                             <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-first-name">
                                 food item
                             </label>
-                            <input class="required appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-first-name" type="text" placeholder="peanut butter" />
+                            <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-first-name" type="text" placeholder="peanut butter" />
                             {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
                         </div>
                         <div class="w-full md:w-1/3 px-3 md:mb-0">
@@ -22,7 +22,8 @@ export default function SubmitForm() {
                                 can your cat eat it?
                             </label>
                             <div class="relative">
-                                <select class="required block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-800 py-3 px-4 pr-8 mb-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-state">
+                                <select required class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-800 py-3 px-4 pr-8 mb-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-state">
+                                    <option value="" disabled selected>select</option>
                                     <option>yes</option>
                                     <option>no</option>
                                     <option>maybe</option>
@@ -38,7 +39,7 @@ export default function SubmitForm() {
                         <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
                             reason
                         </label>
-                        <input class="required appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="peanut butter is too sticky for their little cat mouths" />
+                        <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="peanut butter is too sticky for their little cat mouths" />
                         {/* <p class="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
                         </div>
                     </div>
@@ -47,7 +48,7 @@ export default function SubmitForm() {
                         <label class="block  tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
                             source url
                         </label>
-                        <input class="required appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="www.totallyreliablesource.com" />
+                        <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="www.totallyreliablesource.com" />
                         </div>
                     </div>
                     <div class="flex flex-wrap -mx-3 mb-2">
@@ -59,9 +60,7 @@ export default function SubmitForm() {
                         </div>
                         {/* TODO: make button functional with form */}
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
-                            <button class="w-full shadow bg-purple-900 hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="button">
-                            submit
-                            </button>
+                            <input class="w-full shadow bg-purple-900 hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="submit" value="submit"/>
                         </div>
                     </div>
                 </form>
