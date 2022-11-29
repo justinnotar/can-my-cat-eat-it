@@ -5,6 +5,7 @@ export const pages = [
     "answer": "maybe",
     "text": "in small quantities? in an emergency? sure. but keep the doggy food away.",
     "source": "www.google.com",
+    "author": "justin",
   },
   {
     "name": "peanut butter",
@@ -12,6 +13,7 @@ export const pages = [
     "answer": "no",
     "text": "it's too sticky for their little mouths, better leave this one for the doggies.",
     "source": "www.yahoo.com",
+    "author": "justin",
   },
   {
     "name": "raw meat",
@@ -19,6 +21,7 @@ export const pages = [
     "answer": "maybe",
     "text": "it depends if the meat is clean and if your cat is used to eating raw meat.",
     "source": "www.msn.com",
+    "author": "justin",
   },
   {
     "name": "cheese",
@@ -26,6 +29,7 @@ export const pages = [
     "answer": "maybe",
     "text": "their little tummy will get upset so only give them a nibble",
     "source": "www.twitter.com",
+    "author": "justin",
   },
   {
     "name": "dog food 1",

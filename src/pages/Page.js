@@ -2,7 +2,6 @@ import { pages } from '../assets/content'
 import NavBar from '../components/NavBar'
 import TopBlur from '../components/TopBlur'
 import { useParams } from 'react-router-dom';
-import SearchBar from '../components/SearchBar'
 import BottomBlur from '../components/BottomBlur'
 import React, {useState, useEffect} from 'react';
 
@@ -11,6 +10,7 @@ export default function Page() {
   const [answer, setAnswer] = useState();
   const [text, setText] = useState();
   const [source, setSource] = useState();
+  const [author, setAuthor] = useState();
   const sourceUrl = 'https://' + source;
   const id = useParams().id;
 
@@ -22,6 +22,7 @@ export default function Page() {
         setAnswer(page.answer);
         setText(page.text);
         setSource(page.source);
+        setAuthor(page.author ? page.author : 'anonymous')
       }
     }
   }, [id]);
@@ -39,8 +40,9 @@ export default function Page() {
             </h1>
             <BottomBlur />
             <div id={answer}>{answer}</div>
-            <div >{text}</div>
+            <div>{text}</div>
             <a href={sourceUrl} target="_blank">source</a>
+            <div>{author}</div>
         </div>
       </main>
     </div>
