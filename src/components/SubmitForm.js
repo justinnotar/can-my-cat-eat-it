@@ -59,6 +59,9 @@ export default function SubmitForm() {
                             <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-name" type="text" placeholder="justin" />
                         </div>
                         {/* TODO: make button functional with form */}
+                        {/* Integrate with Google Sheets to populate data */}
+                        {/* https://github.com/levinunnink/html-form-to-google-sheet */}
+                        {/* https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6 */}
                         <div class="w-full md:w-1/2 px-3 md:mb-0">
                             <input class="w-full shadow bg-purple-900 cursor-pointer hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="submit" value="submit"/>
                         </div>
