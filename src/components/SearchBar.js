@@ -40,7 +40,7 @@ export default function SearchBar() {
                     </Combobox.Options>
                 )}
                 {
-                    query && filteredPages.length == 0 && 
+                    query && filteredPages.length === 0 && 
                     <div className="pl-2 pt-2 pb-1">no results found</div>
                 }
             </div>
