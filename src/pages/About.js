@@ -17,8 +17,10 @@ export default function Home() {
           </h1>
           <h1 className="text-3xl text-center">why was <i>canmycateat.xyz</i> created?</h1>
           <p className="p-4">searching google for a one-word answer to anything can pretty difficult, let alone whether a certain food is safe for your cat to eat. there are thousands of articles that cover cat health and feline nutrition, yet none that present a simple yes or no answer. the goal of this site is to provide you just that.</p>
-          <h1 className="text-3xl text-center">who was <i>canmycateat.xyz</i> created by?</h1>
+          <h1 className="text-3xl text-center">who created <i>canmycateat.xyz</i>?</h1>
           <p className="p-4 text-center"><a href="https://notar.dev"><u>justin</u></a> and allisa</p>
+          <h1 className="text-3xl text-center">how can i support <i>canmycateat.xyz</i>?</h1>
+          <p className="p-4 text-center">vote for us on <a href="https://notar.dev"><u>product hunt</u></a>!</p>
         </div>
       </main>
     </div>
