@@ -12,7 +12,11 @@ export default function SearchBar() {
     return (
         <Combobox 
         as="div" 
-        className="p-10 pt-4 pb-20 overflow-y-auto">
+        className="p-10 pt-4 pb-20 overflow-y-auto"
+        onChange={(page) => {
+            window.location.href=`/${page.url}`
+        }}
+        >
             <div className="p-4 max-w-xl mx-auto text-xl rounded-xl text-purple-900 bg-white ring-1 ring-black/5 shadow-2xl divide-y divide-purple-300">
                 <div className="flex items-center pb-1">
                     <SearchIcon className="h-6 w-6"/>
@@ -27,7 +31,7 @@ export default function SearchBar() {
                 {filteredPages.length > 0 && (
                     <Combobox.Options static className="pt-1 overflow-y-auto comboboxMaxHeight">
                         {filteredPages.map((page) => (
-                            <Combobox.Option key={page.url} className="mr-3">
+                            <Combobox.Option key={page.url} value={page} className="mr-3">
                                 {({ active }) => (
                                     <a className="visited:text-purple-900 hover:text-purple-900 text-purple-900" href={page.url}>
                                         <div className={`p-1 pl-2 font-medium ${active ? `bg-purple-900 text-white rounded-lg` : ``}`}>
