@@ -8,7 +8,7 @@ import React, {useState, useEffect} from 'react';
 export default function Page() {
   const [name, setName] = useState();
   const [answer, setAnswer] = useState();
-  const [text, setText] = useState();
+  const [reason, setReason] = useState();
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
   const sourceUrl = 'https://' + source;
@@ -20,7 +20,7 @@ export default function Page() {
       if (page.url === id) {
         setName(page.name);
         setAnswer(page.answer);
-        setText(page.text);
+        setReason(page.reason);
         setSource(page.source);
         setAuthor(page.author ? page.author : 'anonymous')
       }
@@ -40,7 +40,7 @@ export default function Page() {
             </h1>
             <BottomBlur />
             <div id={answer}>{answer}</div>
-            <div>{text}</div>
+            <div>{reason}</div>
             <a href={sourceUrl} target="_blank">source</a>
             <div>{author}</div>
         </div>
