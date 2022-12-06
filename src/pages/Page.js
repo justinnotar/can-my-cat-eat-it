@@ -41,7 +41,7 @@ export default function Page() {
             <BottomBlur />
             <div id={answer}>{answer}</div>
             <div>{reason}</div>
-            <a href={sourceUrl} target="_blank">source</a>
+            <a href={sourceUrl} target="_blank" rel="noreferrer">source</a>
             <div>{author}</div>
         </div>
       </main>
