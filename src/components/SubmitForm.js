@@ -1,75 +1,161 @@
-import '../index.css'
-import { Combobox } from '@headlessui/react'
+import "../index.css";
+import {useState} from 'react';
+import { Combobox } from '@headlessui/react';
+import { getDatabase, ref, set } from "firebase/database";
 
 export default function SubmitForm() {
-    
-// TODO: change screen after form submission
+  const [name, setName] = useState();
+  const [answer, setAnswer] = useState();
+  const [reason, setReason] = useState();
+  const [source, setSource] = useState();
+  const [author, setAuthor] = useState();
 
-    return (
-        <Combobox 
-        as="div" 
-        className="p-10 pt-4 pb-20 overflow-y-auto">
-            <div className="p-4 max-w-xl mx-auto text-xl rounded-xl text-purple-900 bg-white ring-1 ring-black/5 shadow-2xl divide-y divide-purple-300">
-                <form class="w-full max-w-xl" method="POST" action="https://script.google.com/macros/s/AKfycbwHl7iGpbytYln0TZ-RNH5f5VVeHgI8xnxd8MOZ8_evsZKNXCF_SWC3NVQjUpBPMLeFzw/exec">
-                    <div class="flex flex-wrap -mx-3">
-                        <div class="w-full md:w-2/3 px-3 md:mb-0">
-                            <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-first-name">
-                                food item
-                            </label>
-                            <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-first-name" type="text" placeholder="peanut butter" name="name"/>
-                            {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
-                        </div>
-                        <div class="w-full md:w-1/3 px-3 md:mb-0">
-                            <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-state">
-                                can your cat eat it?
-                            </label>
-                            <div class="relative">
-                                <select required class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-800 py-3 px-4 pr-8 mb-3 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-state" type="select" name="answer">
-                                    <option value="" disabled selected>select</option>
-                                    <option>yes</option>
-                                    <option>no</option>
-                                    <option>maybe</option>
-                                </select>
-                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800">
-                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3">
-                        <div class="w-full px-3">
-                        <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
-                            reason
-                        </label>
-                        <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="peanut butter is too sticky for their little cat mouths" name="reason"/>
-                        {/* <p class="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3">
-                        <div class="w-full px-3">
-                        <label class="block  tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-password">
-                            source url
-                        </label>
-                        <input required class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-password" type="text" placeholder="www.totallyreliablesource.com" name="source"/>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap -mx-3 mb-2">
-                        <div class="w-full md:w-1/2 px-3  md:mb-0">
-                            <label class="block tracking-wide text-gray-800 text-xs font-bold mb-2" for="grid-name">
-                                name (optional)
-                            </label>
-                            <input class="appearance-none block w-full bg-gray-200 text-gray-800 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-400" id="grid-name" type="text" placeholder="justin" name="author"/>
-                        </div>
-                        {/* TODO: make button functional with form */}
-                        {/* Integrate with Google Sheets to populate data */}
-                        {/* https://github.com/levinunnink/html-form-to-google-sheet */}
-                        {/* https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6 */}
-                        <div class="w-full md:w-1/2 px-3 md:mb-0">
-                            <input class="w-full shadow bg-purple-900 cursor-pointer hover:bg-purple-500 focus:shadow-outline focus:outline-none text-white font-bold py-3 mt-6 rounded" type="submit" value="submit"/>
-                        </div>
-                    </div>
-                </form>
+  const Push = () => {
+    const db = getDatabase();
+    db.ref("user").set({
+        name: name,
+        answer: answer,
+        reason: reason,
+        source: source,
+        author: author,
+      })
+      .catch(alert);
+  };
+
+  return (
+    <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
+      <div className="mx-auto max-w-xl divide-y divide-purple-300 rounded-xl bg-white p-4 text-xl text-purple-900 shadow-2xl ring-1 ring-black/5">
+        <form class="w-full max-w-xl">
+          <div class="-mx-3 flex flex-wrap">
+            <div class="w-full px-3 md:mb-0 md:w-2/3">
+              <label
+                class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
+                for="grid-first-name"
+              >
+                food item
+              </label>
+              <input
+                required
+                class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
+                id="grid-first-name"
+                type="text"
+                placeholder="peanut butter"
+                name="name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
+              {/* <p class="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
-        </Combobox>
-    )
+            <div class="w-full px-3 md:mb-0 md:w-1/3">
+              <label
+                class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
+                for="grid-state"
+              >
+                can your cat eat it?
+              </label>
+              <div class="relative">
+                <select
+                  required
+                  class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 pr-8 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
+                  id="grid-state"
+                  type="select"
+                  name="answer"
+                  onChange={(e) => setAnswer(e.target.value)}
+                  value={answer}
+                >
+                  <option value="" disabled selected>
+                    select
+                  </option>
+                  <option>yes</option>
+                  <option>no</option>
+                  <option>maybe</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-800">
+                  <svg
+                    class="h-4 w-4 fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="-mx-3 flex flex-wrap">
+            <div class="w-full px-3">
+              <label
+                class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
+                for="grid-password"
+              >
+                reason
+              </label>
+              <input
+                required
+                class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
+                id="grid-password"
+                type="text"
+                placeholder="peanut butter is too sticky for their little cat mouths"
+                name="reason"
+                onChange={(e) => setReason(e.target.value)}
+                value={reason}
+              />
+              {/* <p class="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
+            </div>
+          </div>
+          <div class="-mx-3 flex flex-wrap">
+            <div class="w-full px-3">
+              <label
+                class="mb-2  block text-xs font-bold tracking-wide text-gray-800"
+                for="grid-password"
+              >
+                source url
+              </label>
+              <input
+                required
+                class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
+                id="grid-password"
+                type="text"
+                placeholder="www.totallyreliablesource.com"
+                name="source"
+                onChange={(e) => setSource(e.target.value)}
+                value={source}
+              />
+            </div>
+          </div>
+          <div class="-mx-3 mb-2 flex flex-wrap">
+            <div class="w-full px-3 md:mb-0  md:w-1/2">
+              <label
+                class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
+                for="grid-name"
+              >
+                name (optional)
+              </label>
+              <input
+                class="block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
+                id="grid-name"
+                type="text"
+                placeholder="justin"
+                name="author"
+                onChange={(e) => setAuthor(e.target.value)}
+                value={author}
+              />
+            </div>
+            {/* TODO: make button functional with form */}
+            {/* Integrate with Google Sheets to populate data */}
+            {/* https://github.com/levinunnink/html-form-to-google-sheet */}
+            {/* https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6 */}
+            <div class="w-full px-3 md:mb-0 md:w-1/2">
+              <input
+                class="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
+                type="submit"
+                value="submit"
+                onClick={Push}
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </Combobox>
+  );
 }
