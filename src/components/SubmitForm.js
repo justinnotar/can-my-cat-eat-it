@@ -4,24 +4,39 @@ import { Combobox } from '@headlessui/react';
 import { getDatabase, ref, set } from "firebase/database";
 
 export default function SubmitForm() {
-  const [name, setName] = useState();
-  const [answer, setAnswer] = useState();
-  const [reason, setReason] = useState();
-  const [source, setSource] = useState();
-  const [author, setAuthor] = useState();
+  const [name, setName] = useState(null);
+  const [answer, setAnswer] = useState(null);
+  const [reason, setReason] = useState(null);
+  const [source, setSource] = useState(null);
+  const [author, setAuthor] = useState(null);
 
-  const Push = () => {
+  const handleSubmit  = () => {
+    console.log(name,answer,reason,source,author);
     const db = getDatabase();
-    db.ref("user").set({
-        name: name,
-        answer: answer,
-        reason: reason,
-        source: source,
-        author: author,
-      })
-      .catch(alert);
-  };
+    set(ref(db,'submissions'), {
+      name:name,
+      answer:answer,
+      reason:reason,
+      source:source,
+      author:author
+    });
+  }
 
+//   const handleSubmit = () => {
+//     console.log(name, answer, reason, source, author)
+//     let obj = {
+//             name:name,
+//             answer:answer,
+//             reason:reason,
+//             source:source,
+//             author:author,
+//         }       
+//     const newPostKey = push(child(ref(database), 'posts')).key;
+//     const updates = {};
+//     updates['/' + newPostKey] = obj
+//     return update(ref(database), updates);
+// }
+  
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
       <div className="mx-auto max-w-xl divide-y divide-purple-300 rounded-xl bg-white p-4 text-xl text-purple-900 shadow-2xl ring-1 ring-black/5">
@@ -30,14 +45,14 @@ export default function SubmitForm() {
             <div class="w-full px-3 md:mb-0 md:w-2/3">
               <label
                 class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
-                for="grid-first-name"
+                for="name"
               >
                 food item
               </label>
               <input
                 required
                 class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
-                id="grid-first-name"
+                id="name"
                 type="text"
                 placeholder="peanut butter"
                 name="name"
@@ -49,7 +64,7 @@ export default function SubmitForm() {
             <div class="w-full px-3 md:mb-0 md:w-1/3">
               <label
                 class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
-                for="grid-state"
+                for="answer"
               >
                 can your cat eat it?
               </label>
@@ -57,7 +72,7 @@ export default function SubmitForm() {
                 <select
                   required
                   class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 pr-8 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
-                  id="grid-state"
+                  id="answer"
                   type="select"
                   name="answer"
                   onChange={(e) => setAnswer(e.target.value)}
@@ -86,14 +101,14 @@ export default function SubmitForm() {
             <div class="w-full px-3">
               <label
                 class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
-                for="grid-password"
+                for="reason"
               >
                 reason
               </label>
               <input
                 required
                 class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
-                id="grid-password"
+                id="reason"
                 type="text"
                 placeholder="peanut butter is too sticky for their little cat mouths"
                 name="reason"
@@ -107,14 +122,14 @@ export default function SubmitForm() {
             <div class="w-full px-3">
               <label
                 class="mb-2  block text-xs font-bold tracking-wide text-gray-800"
-                for="grid-password"
+                for="source"
               >
                 source url
               </label>
               <input
                 required
                 class="mb-3 block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
-                id="grid-password"
+                id="source"
                 type="text"
                 placeholder="www.totallyreliablesource.com"
                 name="source"
@@ -127,13 +142,13 @@ export default function SubmitForm() {
             <div class="w-full px-3 md:mb-0  md:w-1/2">
               <label
                 class="mb-2 block text-xs font-bold tracking-wide text-gray-800"
-                for="grid-name"
+                for="author"
               >
                 name (optional)
               </label>
               <input
                 class="block w-full appearance-none rounded border border-gray-200 bg-gray-200 py-3 px-4 leading-tight text-gray-800 focus:border-gray-400 focus:bg-white focus:outline-none"
-                id="grid-name"
+                id="author"
                 type="text"
                 placeholder="justin"
                 name="author"
@@ -150,7 +165,7 @@ export default function SubmitForm() {
                 class="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
                 type="submit"
                 value="submit"
-                onClick={Push}
+                onClick={()=>handleSubmit()}
               />
             </div>
           </div>
