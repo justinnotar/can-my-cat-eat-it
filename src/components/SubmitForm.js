@@ -1,8 +1,8 @@
 import "../index.css";
 import {useState} from 'react';
 import { Combobox } from '@headlessui/react';
-import { getDatabase, ref, set } from "firebase/database";
-import database from '../firebase'
+// import { getDatabase, ref, set } from "firebase/database";
+// import database from '../firebase'
 
 export default function SubmitForm() {
   const [name, setName] = useState(null);
@@ -12,29 +12,14 @@ export default function SubmitForm() {
   const [author, setAuthor] = useState(null);
   const handleSubmit  = () => {
     console.log(name,answer,reason,source,author);
-    set(ref(database, '/test'), {
-      name:name,
-      answer:answer,
-      reason:reason,
-      source:source,
-      author:author
-    });
+    // set(ref(database, '/test' + author), {
+    //   name:name,
+    //   answer:answer,
+    //   reason:reason,
+    //   source:source,
+    //   author:author
+    // });
   }
-
-//   const handleSubmit = () => {
-//     console.log(name, answer, reason, source, author)
-//     let obj = {
-//             name:name,
-//             answer:answer,
-//             reason:reason,
-//             source:source,
-//             author:author,
-//         }       
-//     const newPostKey = push(child(ref(database), 'posts')).key;
-//     const updates = {};
-//     updates['/' + newPostKey] = obj
-//     return update(ref(database), updates);
-// }
   
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
