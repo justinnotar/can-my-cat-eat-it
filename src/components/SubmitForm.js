@@ -2,6 +2,7 @@ import "../index.css";
 import {useState} from 'react';
 import { Combobox } from '@headlessui/react';
 import { getDatabase, ref, set } from "firebase/database";
+import database from '../firebase'
 
 export default function SubmitForm() {
   const [name, setName] = useState(null);
@@ -9,11 +10,9 @@ export default function SubmitForm() {
   const [reason, setReason] = useState(null);
   const [source, setSource] = useState(null);
   const [author, setAuthor] = useState(null);
-
   const handleSubmit  = () => {
     console.log(name,answer,reason,source,author);
-    const db = getDatabase();
-    set(ref(db,'submissions'), {
+    set(ref(database, '/test'), {
       name:name,
       answer:answer,
       reason:reason,
