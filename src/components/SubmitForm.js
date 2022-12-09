@@ -1,8 +1,6 @@
 import "../index.css";
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
-// import { getDatabase, ref, set } from "firebase/database";
-// import database from '../firebase'
 
 export default function SubmitForm() {
   const [name, setName] = useState();
@@ -12,13 +10,6 @@ export default function SubmitForm() {
   const [author, setAuthor] = useState();
   const handleSubmit = () => {
     console.log(name, answer, reason, source, author);
-    // set(ref(database, '/test' + author), {
-    //   name:name,
-    //   answer:answer,
-    //   reason:reason,
-    //   source:source,
-    //   author:author
-    // });
   };
 
   return (
@@ -140,10 +131,6 @@ export default function SubmitForm() {
                 value={author || ''}
               />
             </div>
-            {/* TODO: make button functional with form */}
-            {/* Integrate with Google Sheets to populate data */}
-            {/* https://github.com/levinunnink/html-form-to-google-sheet */}
-            {/* https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6 */}
             <div className="w-full px-3 md:mb-0 md:w-1/2">
               <input
                 className="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
