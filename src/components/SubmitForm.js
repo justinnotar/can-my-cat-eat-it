@@ -1,4 +1,5 @@
 import "../index.css";
+import axios from 'axios';
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
 
@@ -11,6 +12,22 @@ export default function SubmitForm() {
   const handleSubmit = () => {
     console.log(name, answer, reason, source, author);
   };
+  
+  // // handle the form submission
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   // send the form data to the serverless function using axios
+  //   const response = await axios.post('https://my-lambda-function.com/api/form', formData);
+
+  //   // update the component's state with the response data
+  //   setFormData({
+  //     name: '',
+  //     email: '',
+  //     message: '',
+  //     success: true
+  //   });
+  // }
 
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
