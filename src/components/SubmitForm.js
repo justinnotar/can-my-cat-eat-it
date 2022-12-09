@@ -1,6 +1,6 @@
 import "../index.css";
-import {useState} from 'react';
-import { Combobox } from '@headlessui/react';
+import { useState } from "react";
+import { Combobox } from "@headlessui/react";
 // import { getDatabase, ref, set } from "firebase/database";
 // import database from '../firebase'
 
@@ -10,8 +10,8 @@ export default function SubmitForm() {
   const [reason, setReason] = useState(null);
   const [source, setSource] = useState(null);
   const [author, setAuthor] = useState(null);
-  const handleSubmit  = () => {
-    console.log(name,answer,reason,source,author);
+  const handleSubmit = () => {
+    console.log(name, answer, reason, source, author);
     // set(ref(database, '/test' + author), {
     //   name:name,
     //   answer:answer,
@@ -19,8 +19,8 @@ export default function SubmitForm() {
     //   source:source,
     //   author:author
     // });
-  }
-  
+  };
+
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
       <div className="mx-auto max-w-xl divide-y divide-purple-300 rounded-xl bg-white p-4 text-xl text-purple-900 shadow-2xl ring-1 ring-black/5">
@@ -149,7 +149,7 @@ export default function SubmitForm() {
                 class="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
                 type="submit"
                 value="submit"
-                onClick={()=>handleSubmit()}
+                onClick={() => handleSubmit()}
               />
             </div>
           </div>
