@@ -1,6 +1,6 @@
 import "../index.css";
-// import axios from 'axios';
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 import { Combobox } from "@headlessui/react";
 
 export default function SubmitForm() {
@@ -9,7 +9,21 @@ export default function SubmitForm() {
   const [reason, setReason] = useState();
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
+
+  // remove emailjs implementation
+  
+  const serviceId = process.env.REACT_APP_EMAIL_SERVICE_ID;
+  const templateId = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
+  const userId = process.env.REACT_APP_EMAIL_USER_ID;
+
   const handleSubmit = () => {
+    emailjs.send(
+      serviceId,
+      templateId,
+      {name, answer, reason, source, author},
+      userId)
+      .then(response => console.log(response))
+      .then(error => console.log(error));
     console.log(name, answer, reason, source, author);
   };
   
@@ -157,6 +171,7 @@ export default function SubmitForm() {
               />
             </div>
           </div>
+          {/* <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span> */}
         </form>
       </div>
     </Combobox>
