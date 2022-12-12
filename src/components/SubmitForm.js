@@ -141,7 +141,6 @@ export default function SubmitForm() {
               />
             </div>
           </div>
-          {/* <span className={emailSent ? 'visible' : null}>Thank you for your message, we will be in touch in no time!</span> */}
         </form>
       </div>
     </Combobox>
