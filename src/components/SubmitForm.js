@@ -11,7 +11,7 @@ export default function SubmitForm() {
   const [author, setAuthor] = useState();
 
   // remove emailjs implementation
-  
+
   const serviceId = process.env.REACT_APP_EMAIL_SERVICE_ID;
   const templateId = process.env.REACT_APP_EMAIL_TEMPLATE_ID;
   const userId = process.env.REACT_APP_EMAIL_USER_ID;
@@ -26,22 +26,6 @@ export default function SubmitForm() {
       .then(error => console.log(error));
     console.log(name, answer, reason, source, author);
   };
-  
-  // // handle the form submission
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   // send the form data to the serverless function using axios
-  //   const response = await axios.post('https://my-lambda-function.com/api/form', formData);
-
-  //   // update the component's state with the response data
-  //   setFormData({
-  //     name: '',
-  //     email: '',
-  //     message: '',
-  //     success: true
-  //   });
-  // }
 
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
