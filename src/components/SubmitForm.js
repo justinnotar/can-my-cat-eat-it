@@ -1,6 +1,8 @@
 import "../index.css";
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
+import firestore from "../firebase"
+import { collection, addDoc } from "firebase/firestore"; 
 
 export default function SubmitForm() {
   const [name, setName] = useState();
@@ -9,8 +11,19 @@ export default function SubmitForm() {
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
 
-  const handleSubmit = () => {
-    console.log(name, answer, reason, source, author);
+  const handleSubmit = async () => {
+    try {
+      const docRef = await addDoc(collection(firestore, "submissions"), {
+        name: name,
+        answer: answer,
+        reason: reason,
+        source: source,
+        author: author
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
   };
 
   return (
