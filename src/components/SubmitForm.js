@@ -1,8 +1,9 @@
 import "../index.css";
+import app from "../firebase"
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
-import db from "../firebase"
 import { doc, setDoc } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore";
 
 export default function SubmitForm() {
   const [name, setName] = useState();
@@ -12,19 +13,18 @@ export default function SubmitForm() {
   const [author, setAuthor] = useState();
 
   const handleSubmit = async () => {
-    await setDoc(doc(db, "submissions", "test1"), {
-        name: name,
-        answer: answer,
-        reason: reason,
-        source: source,
-        author: author,
-      })
-      .then(function () {
-        console.log("Value successfully written!");
-      })
-      .catch(function (error) {
-        console.error("Error writing Value: ", error);
-      });
+    const db = getFirestore(app, {
+      experimentalForceLongPolling: true,
+      useFetchStreams: false,
+    });
+    // Add a new document in collection "cities"
+    await setDoc(doc(db, "cities", "LA"), {
+      name: "Los Angeles",
+      state: "CA",
+      country: "USA"
+    });
+
+    console.log(name, answer, reason, source, author)
   };
 
   return (
