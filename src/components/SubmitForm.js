@@ -1,7 +1,7 @@
 import "../index.css";
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
-import firestore from "../firebase"
+import db from "../firebase"
 import { doc, setDoc } from "firebase/firestore"; 
 
 export default function SubmitForm() {
@@ -12,18 +12,19 @@ export default function SubmitForm() {
   const [author, setAuthor] = useState();
 
   const handleSubmit = async () => {
-    try {
-      const docRef = await setDoc(doc(firestore, "submissions","newData"), {
+    await setDoc(doc(db, "submissions", "test1"), {
         name: name,
         answer: answer,
         reason: reason,
         source: source,
-        author: author
-      }, {merge: true});
-      console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
+        author: author,
+      })
+      .then(function () {
+        console.log("Value successfully written!");
+      })
+      .catch(function (error) {
+        console.error("Error writing Value: ", error);
+      });
   };
 
   return (
@@ -150,7 +151,7 @@ export default function SubmitForm() {
                 className="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
                 type="submit"
                 value="submit"
-                onClick={() => handleSubmit()}
+                onClick={handleSubmit}
               />
             </div>
           </div>
