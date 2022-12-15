@@ -1,9 +1,6 @@
 import "../index.css";
-import app from "../firebase"
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
-import { doc, setDoc } from "firebase/firestore"; 
-import { getFirestore } from "firebase/firestore";
 
 export default function SubmitForm() {
   const [name, setName] = useState();
@@ -12,18 +9,7 @@ export default function SubmitForm() {
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
 
-  const handleSubmit = async () => {
-    const db = getFirestore(app, {
-      experimentalForceLongPolling: true,
-      useFetchStreams: false,
-    });
-    // Add a new document in collection "cities"
-    await setDoc(doc(db, "cities", "LA"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "USA"
-    });
-
+  const handleSubmit = () => {
     console.log(name, answer, reason, source, author)
   };
 
