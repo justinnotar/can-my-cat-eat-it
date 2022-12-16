@@ -9,8 +9,38 @@ export default function SubmitForm() {
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
 
+  const axios = require('axios');
+  const data = JSON.stringify({
+      "collection": "submissions",
+      "database": "can-my-cat-eat-xyz",
+      "dataSource": "Cluster0",
+      "projection": {
+          "_id": 1
+      }
+  });
+              
+  const config = {
+      method: 'post',
+      url: 'https://data.mongodb-api.com/app/data-fgclx/endpoint/data/v1/action/findOne',
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Request-Headers': '*',
+        'api-key': '<API_KEY>',
+      },
+      data: data
+  };
+
   const handleSubmit = () => {
     console.log(name, answer, reason, source, author)
+            
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   };
 
   return (
