@@ -9,30 +9,29 @@ export default function SubmitForm() {
   const [source, setSource] = useState();
   const [author, setAuthor] = useState();
 
-  const axios = require('axios');
+  const axios = require("axios");
   const data = JSON.stringify({
-      "collection": "submissions",
-      "database": "can-my-cat-eat-xyz",
-      "dataSource": "Cluster0",
-      "projection": {
-          "_id": 1
-      }
+    collection: "submissions",
+    database: "can-my-cat-eat-xyz",
+    dataSource: "Cluster0",
+    projection: {
+      _id: 1,
+    },
   });
-              
+
   const config = {
-      method: 'post',
-      url: 'https://data.mongodb-api.com/app/data-fgclx/endpoint/data/v1/action/findOne',
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Request-Headers': '*',
-        'api-key': '<API_KEY>',
-      },
-      data: data
+    method: "post",
+    url: "https://data.mongodb-api.com/app/data-fgclx/endpoint/data/v1/action/findOne",
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Request-Headers": "*",
+      "api-key": "<API_KEY>",
+    },
+    data: data,
   };
 
   const handleSubmit = () => {
-    console.log(name, answer, reason, source, author)
-            
+    console.log(name, answer, reason, source, author);
     axios(config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
@@ -40,7 +39,6 @@ export default function SubmitForm() {
       .catch(function (error) {
         console.log(error);
       });
-
   };
 
   return (
@@ -63,7 +61,7 @@ export default function SubmitForm() {
                 placeholder="peanut butter"
                 name="name"
                 onChange={(e) => setName(e.target.value)}
-                value={name || ''}
+                value={name || ""}
               />
               {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
@@ -82,7 +80,7 @@ export default function SubmitForm() {
                   type="select"
                   name="answer"
                   onChange={(e) => setAnswer(e.target.value)}
-                  value={answer || ''}
+                  value={answer || ""}
                 >
                   <option value="" defaultValue="">
                     select
@@ -119,7 +117,7 @@ export default function SubmitForm() {
                 placeholder="peanut butter is too sticky for their little cat mouths"
                 name="reason"
                 onChange={(e) => setReason(e.target.value)}
-                value={reason || ''}
+                value={reason || ""}
               />
               {/* <p className="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
             </div>
@@ -140,7 +138,7 @@ export default function SubmitForm() {
                 placeholder="www.totallyreliablesource.com"
                 name="source"
                 onChange={(e) => setSource(e.target.value)}
-                value={source || ''}
+                value={source || ""}
               />
             </div>
           </div>
@@ -159,7 +157,7 @@ export default function SubmitForm() {
                 placeholder="justin"
                 name="author"
                 onChange={(e) => setAuthor(e.target.value)}
-                value={author || ''}
+                value={author || ""}
               />
             </div>
             <div className="w-full px-3 md:mb-0 md:w-1/2">
