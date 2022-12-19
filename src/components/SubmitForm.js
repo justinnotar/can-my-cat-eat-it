@@ -2,15 +2,52 @@ import "../index.css";
 import { useState } from "react";
 import { Combobox } from "@headlessui/react";
 
-export default function SubmitForm() {
-  const [name, setName] = useState();
-  const [answer, setAnswer] = useState();
-  const [reason, setReason] = useState();
-  const [source, setSource] = useState();
-  const [author, setAuthor] = useState();
+export default function SubmitForm(props) {
 
-  const handleSubmit = () => {
-    console.log(name, answer, reason, source, author);
+  const [data, setData] = useState({
+    name: "",
+    answer: "",
+    reason: "",
+    source: "",
+    author: "",
+  })
+
+  const { name, answer, reason, source, author } = data;
+
+  const setContactData = (e) => {
+    let name = e.target.name;
+    let value = e.target.value;
+    setData({ ...data, [name]: [value] }) // we can send data in state without delete old data
+  }
+
+  const sendData = async (e) => {
+    e.preventDefault(); // Use for stop to getting Page "Unable to POST/"
+    if (name && answer && reason && source && author) {
+      console.log(props.url);
+        let res = await fetch(props.url, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, answer, reason, source, author })
+            // Web can directly send JSON
+            // body: JSON.stringify(data)
+        });
+        // For set empty field
+        if (res) {
+            setData({
+                name: name,
+                answer: answer,
+                reason: reason,
+                source: source,
+                author: author
+            });
+            alert("Message sent Successfully")
+        }
+    } else {
+        alert("Fill all the Field");
+    }
   }
 
   return (
@@ -32,8 +69,8 @@ export default function SubmitForm() {
                 type="text"
                 placeholder="peanut butter"
                 name="name"
-                onChange={(e) => setName(e.target.value)}
-                value={name || ""}
+                value={data.name}
+                onChange={setContactData}
               />
               {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
             </div>
@@ -51,8 +88,8 @@ export default function SubmitForm() {
                   id="answer"
                   type="select"
                   name="answer"
-                  onChange={(e) => setAnswer(e.target.value)}
-                  value={answer || ""}
+                  value={data.answer}
+                  onChange={setContactData}
                 >
                   <option value="" defaultValue="">
                     select
@@ -88,8 +125,8 @@ export default function SubmitForm() {
                 type="text"
                 placeholder="peanut butter is too sticky for their little cat mouths"
                 name="reason"
-                onChange={(e) => setReason(e.target.value)}
-                value={reason || ""}
+                value={data.reason}
+                onChange={setContactData}
               />
               {/* <p className="text-gray-600 text-xs italic">make it as long and as crazy as you'd like</p> */}
             </div>
@@ -109,8 +146,8 @@ export default function SubmitForm() {
                 type="text"
                 placeholder="www.totallyreliablesource.com"
                 name="source"
-                onChange={(e) => setSource(e.target.value)}
-                value={source || ""}
+                value={data.source}
+                onChange={setContactData}
               />
             </div>
           </div>
@@ -128,8 +165,8 @@ export default function SubmitForm() {
                 type="text"
                 placeholder="justin"
                 name="author"
-                onChange={(e) => setAuthor(e.target.value)}
-                value={author || ""}
+                value={data.author}
+                onChange={setContactData}
               />
             </div>
             <div className="w-full px-3 md:mb-0 md:w-1/2">
@@ -137,7 +174,7 @@ export default function SubmitForm() {
                 className="focus:shadow-outline mt-6 w-full cursor-pointer rounded bg-purple-900 py-3 font-bold text-white shadow hover:bg-purple-500 focus:outline-none"
                 type="submit"
                 value="submit"
-                onClick={handleSubmit}
+                onClick={sendData}
               />
             </div>
           </div>
