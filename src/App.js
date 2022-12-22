@@ -20,7 +20,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />
-        <Route exact path="/submit" component={Submit} url={URL}/>
+        <Route exact path="/submit" component={Submit} url={URL} />
         <Route exact path="/legal" component={Legal} />
         <Route exact path="/:id" component={Page} />
         <Route component={ErrorPage} />

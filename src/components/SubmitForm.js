@@ -3,52 +3,51 @@ import { useState } from "react";
 import { Combobox } from "@headlessui/react";
 
 export default function SubmitForm(props) {
-
   const [data, setData] = useState({
     name: "",
     answer: "",
     reason: "",
     source: "",
     author: "",
-  })
+  });
 
   const { name, answer, reason, source, author } = data;
 
   const setContactData = (e) => {
     let name = e.target.name;
     let value = e.target.value;
-    setData({ ...data, [name]: [value] }) // we can send data in state without delete old data
-  }
+    setData({ ...data, [name]: [value] }); // we can send data in state without delete old data
+  };
 
   const sendData = async (e) => {
     e.preventDefault(); // Use for stop to getting Page "Unable to POST/"
     if (name && answer && reason && source && author) {
       console.log(props.url);
-        let res = await fetch(props.url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, answer, reason, source, author })
-            // Web can directly send JSON
-            // body: JSON.stringify(data)
+      let res = await fetch(props.url, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, answer, reason, source, author }),
+        // Web can directly send JSON
+        // body: JSON.stringify(data)
+      });
+      // For set empty field
+      if (res) {
+        setData({
+          name: name,
+          answer: answer,
+          reason: reason,
+          source: source,
+          author: author,
         });
-        // For set empty field
-        if (res) {
-            setData({
-                name: name,
-                answer: answer,
-                reason: reason,
-                source: source,
-                author: author
-            });
-            alert("Message sent Successfully")
-        }
+        alert("Message sent Successfully");
+      }
     } else {
-        alert("Fill all the Field");
+      alert("Fill all the Field");
     }
-  }
+  };
 
   return (
     <Combobox as="div" className="overflow-y-auto p-10 pt-4 pb-20">
