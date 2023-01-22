@@ -7,7 +7,7 @@ import { SearchIcon } from "@heroicons/react/outline";
 export default function SearchBar() {
   const [query, setQuery] = useState("");
   const filteredPages = pages.filter((page) =>
-    page.name.toLowerCase().startsWith(query.toLowerCase())
+    page.toLowerCase().startsWith(query.toLowerCase())
   );
 
   return (
@@ -15,7 +15,7 @@ export default function SearchBar() {
       as="div"
       className="overflow-y-auto p-10 pt-4 pb-20"
       onChange={(page) => {
-        window.location.href = `/${page.url}`;
+        window.location.href = `/${page}`;
       }}
     >
       <div className="mx-auto max-w-xl divide-y divide-purple-300 rounded-xl bg-white p-4 text-xl text-purple-900 shadow-2xl ring-1 ring-black/5">
@@ -34,19 +34,19 @@ export default function SearchBar() {
             static
             className="comboboxMaxHeight overflow-y-auto pt-1"
           >
-            {filteredPages.map((page) => (
-              <Combobox.Option key={page.url} value={page} className="mr-3">
+            {filteredPages.sort(() => 0.5 - Math.random()).map((page) => (
+              <Combobox.Option key={page} className="mr-3">
                 {({ active }) => (
                   <a
                     className="text-purple-900 visited:text-purple-900 hover:text-purple-900"
-                    href={page.url}
+                    href={page}
                   >
                     <div
                       className={`p-1 pl-2 font-medium ${
                         active ? `rounded-lg bg-purple-900 text-white` : ``
                       }`}
                     >
-                      {page.name}
+                      {page}
                     </div>
                   </a>
                 )}

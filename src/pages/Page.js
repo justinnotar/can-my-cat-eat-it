@@ -5,27 +5,44 @@ import { useParams } from "react-router-dom";
 import BottomBlur from "../components/BottomBlur";
 import React, { useState, useEffect } from "react";
 
+const { Configuration, OpenAIApi } = require("openai");
+
+const configuration = new Configuration({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+});
+
+const openai = new OpenAIApi(configuration);
+
 export default function Page() {
   const [name, setName] = useState();
   const [answer, setAnswer] = useState();
-  const [reason, setReason] = useState();
-  const [source, setSource] = useState();
-  const [author, setAuthor] = useState();
-  const sourceUrl = "https://" + source;
   const id = useParams().id;
 
   useEffect(() => {
     for (var i = 0; i < pages.length; i++) {
       var page = pages[i];
-      if (page.url === id) {
-        setName(page.name);
-        setAnswer(page.answer);
-        setReason(page.reason);
-        setSource(page.source);
-        setAuthor(page.author ? page.author : "anonymous");
+      if (page === id) {
+        setName(page);
+        generateAnswer(page)
       }
     }
   }, [id]);
+
+  const generateAnswer = async (word) => {
+    console.log(word);
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: `Can my cat eat ${word}? Please give a yes or no answer with a short explanation of your answer.`,
+      temperature: 0.5,
+      max_tokens: 60,
+      top_p: 1.0,
+      frequency_penalty: 0.8,
+      presence_penalty: 0.0,
+    });
+    console.log(response.data.choices[0].text)
+    setAnswer(response.data.choices[0].text);
+    window.stop();
+  };
 
   return (
     <div className="isolate min-h-screen overflow-y-hidden bg-purple-100">
@@ -42,12 +59,13 @@ export default function Page() {
             &nbsp;?
           </h1>
           <BottomBlur />
-          <div id={answer}>{answer}</div>
+          <div>{answer}</div>
+          {/* <div id={answer}>{answer}</div>
           <div>{reason}</div>
           <a href={sourceUrl} target="_blank" rel="noreferrer">
             source
           </a>
-          <div>{author}</div>
+          <div>{author}</div> */}
         </div>
       </main>
     </div>
