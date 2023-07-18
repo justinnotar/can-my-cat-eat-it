@@ -11,5 +11,18 @@ export const pages = [
   'milk',
   'rice cakes',
   'almonds',
-  'bologna'
+  'bologna',
+  'apple',
+  'pumpkin',
+  'sea salt',
+  'flour',
+  'rose petals',
+  'diet soda',
+  'cashew milk',
+  'pudding',
+  'hot pockets',
+  'pancake batter',
+  'bubble gum',
+  'zucchini',
+  'bread'
 ];
