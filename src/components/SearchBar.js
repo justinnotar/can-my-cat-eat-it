@@ -30,22 +30,12 @@ export default function SearchBar() {
           />
         </div>
         {filteredPages.length > 0 && (
-          <Combobox.Options
-            static
-            className="comboboxMaxHeight overflow-y-auto pt-1"
-          >
+          <Combobox.Options static className="comboboxMaxHeight overflow-y-auto pt-1">
             {filteredPages.sort(() => 0.5 - Math.random()).map((page) => (
               <Combobox.Option key={page} className="mr-3">
                 {({ active }) => (
-                  <a
-                    className="text-purple-900 visited:text-purple-900 hover:text-purple-900"
-                    href={page}
-                  >
-                    <div
-                      className={`p-1 pl-2 font-medium ${
-                        active ? `rounded-lg bg-purple-900 text-white` : ``
-                      }`}
-                    >
+                  <a className="text-purple-900 visited:text-purple-900 hover:text-purple-900" href={page}>
+                    <div className={`p-1 pl-2 font-medium ${active ? `rounded-lg bg-purple-900 text-white` : ``}`}>
                       {page}
                     </div>
                   </a>
@@ -55,7 +45,17 @@ export default function SearchBar() {
           </Combobox.Options>
         )}
         {query && filteredPages.length === 0 && (
-          <div className="pl-2 pt-2 pb-1">no results found</div>
+          <Combobox.Options static className="comboboxMaxHeight overflow-y-auto pt-1">
+            <Combobox.Option key={query} className="mr-3">
+              {({ active }) => (
+                <a className="text-purple-900 visited:text-purple-900 hover:text-purple-900" href={query}>
+                  <div className={`p-1 pl-2 font-medium ${active ? `rounded-lg bg-purple-900 text-white` : ``}`}>
+                    {query}
+                  </div>
+                </a>
+              )}
+            </Combobox.Option>
+          </Combobox.Options>
         )}
       </div>
     </Combobox>

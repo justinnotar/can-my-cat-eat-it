@@ -30,7 +30,6 @@ export default function Home() {
             <a href="https://notar.dev">
               <u>justin</u>
             </a>{" "}
-            and allisa
           </p>
           <h1 className="text-3xl ">
             how can i support <i>canmycateat.xyz</i>?

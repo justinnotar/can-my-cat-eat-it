@@ -11,4 +11,5 @@ export const pages = [
   'milk',
   'rice cakes',
   'almonds',
+  'bologna'
 ];
