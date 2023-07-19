@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/can-my-cat-eat-xyz/static/css/main.f37d9c4f.css",
+    "main.js": "/can-my-cat-eat-xyz/static/js/main.ade6b5fc.js",
+    "static/js/787.dd3d99cc.chunk.js": "/can-my-cat-eat-xyz/static/js/787.dd3d99cc.chunk.js",
+    "index.html": "/can-my-cat-eat-xyz/index.html",
+    "main.f37d9c4f.css.map": "/can-my-cat-eat-xyz/static/css/main.f37d9c4f.css.map",
+    "main.ade6b5fc.js.map": "/can-my-cat-eat-xyz/static/js/main.ade6b5fc.js.map",
+    "787.dd3d99cc.chunk.js.map": "/can-my-cat-eat-xyz/static/js/787.dd3d99cc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f37d9c4f.css",
+    "static/js/main.ade6b5fc.js"
+  ]
+}
