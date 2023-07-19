@@ -11,11 +11,11 @@ export default async function request(word) {
     messages: [
         {
         "role": "user",
-        "content": `In general, can cats eat ${word}? Start your response with either "yes" or no" followed by a period. Then, give a short reason for why cats can or cannot eat ${word}. If you're not sure about an answer, or the question doesn't make sense, then just resonse "oof".`
+        "content": `In general, can cats eat ${word}? Start your response with either "Yes." or "No.". Then, in 2-3 complete sentences, give a reason for why cats can or cannot eat ${word}. If you don't have an answer or the question doesn't make sense, then just return "Oof. Sorry! Please try a different food.".`
         }
     ],
     temperature: 0,
-    max_tokens: 64,
+    max_tokens: 100,
     top_p: 1.0,
     frequency_penalty: 0.0,
     presence_penalty: 0.0,

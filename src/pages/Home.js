@@ -12,7 +12,6 @@ export default function Home() {
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
-          {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
           <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
             can my 🐈 eat{" "}
             <b>

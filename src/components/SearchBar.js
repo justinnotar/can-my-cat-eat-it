@@ -14,8 +14,10 @@ export default function SearchBar() {
     <Combobox
       as="div"
       className="overflow-y-auto p-10 pt-4 pb-20"
-      onChange={(page) => {
-        window.location.href = `/${page}`;
+      onChange={(query) => {
+        if (query !== undefined) {
+          window.location.href = `/${query}`;
+        }
       }}
     >
       <div className="mx-auto max-w-xl divide-y divide-purple-300 rounded-xl bg-white p-4 text-xl text-purple-900 shadow-2xl ring-1 ring-black/5">
@@ -44,7 +46,7 @@ export default function SearchBar() {
             ))}
           </Combobox.Options>
         )}
-        {query && filteredPages.length === 0 && (
+        {filteredPages.length === 0 && (
           <Combobox.Options static className="comboboxMaxHeight overflow-y-auto pt-1">
             <Combobox.Option key={query} className="mr-3">
               {({ active }) => (

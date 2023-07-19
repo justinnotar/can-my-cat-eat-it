@@ -12,7 +12,7 @@ export const pages = [
   'rice cakes',
   'almonds',
   'bologna',
-  'apple',
+  'apples',
   'pumpkin',
   'sea salt',
   'flour',

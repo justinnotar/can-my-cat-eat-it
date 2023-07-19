@@ -1,4 +1,3 @@
-import { pages } from "../assets/content";
 import NavBar from "../components/NavBar";
 import TopBlur from "../components/TopBlur";
 import BottomBlur from "../components/BottomBlur";
@@ -6,21 +5,24 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import request from "../request";
 
-function formatText(input) {
-  let answer = ''
-  if (input.charAt(0) == 'y') {
-    answer = 'yes'
-  }
-  else answer = 'no'
-  input = input.substring(4)
-  return {answer: answer, input: input}
-}
-
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
   const [answer, setAnswer] = useState(null)
   const [reason, setReason] = useState(null)
   const food = useParams().id;
+
+  function formatText(input) {
+    let answer = ''
+    if (input.charAt(0) === 'Y') {
+      answer = 'Yup'
+    }
+    else if (input.charAt(0) === 'O') {
+      answer = 'Oof'
+    }
+    else answer = 'Nope'
+    input = input.substring(4)
+    return {answer: answer, input: input}
+  }
 
   useEffect(() => {
     const data = request(food)
@@ -48,8 +50,8 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <div className="text-purple-900">loading...</div>}
-        {!isLoading && <div className="text-purple-900">{answer}</div>}
+        {isLoading && <div className="text-purple-900">Loading...</div>}
+        {!isLoading && <div className="text-purple-900 font-bold">{answer}</div>}
         {!isLoading && <div>{reason}</div>}
       </div>
     </main>
