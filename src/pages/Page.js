@@ -14,12 +14,12 @@ export default function Page() {
   function formatText(input) {
     let answer = ''
     if (input.charAt(0) === 'Y') {
-      answer = 'Yup'
+      answer = 'yup'
     }
     else if (input.charAt(0) === 'O') {
-      answer = 'Oof'
+      answer = 'oof'
     }
-    else answer = 'Nope'
+    else answer = 'nope'
     input = input.substring(4)
     return {answer: answer, input: input}
   }
@@ -50,9 +50,9 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <div className="text-purple-900">Loading...</div>}
-        {!isLoading && <div className="text-purple-900 font-bold">{answer}</div>}
-        {!isLoading && <div>{reason}</div>}
+        {isLoading && <div className="text-purple-900 text-3xl pt-6 text-center">loading...</div>}
+        {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
+        {!isLoading && <div className="text-center text-purple-900 pt-8">{reason}</div>}
       </div>
     </main>
   </div>

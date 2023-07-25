@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Page from "./pages/Page";
 import About from "./pages/About";
 import Legal from "./pages/Legal";
+import './App.css'
 
 const ErrorPage = () => {
   return (

@@ -3,3 +3,15 @@
   --green: #06d6a0;
   --yellow: #ffd166;
 }
+
+.yup {
+  color: var(--green);
+}
+
+.nope {
+  color: var(--red);
+}
+
+.oof {
+  color: var(--yellow)
+}
