@@ -18,7 +18,7 @@ export const pages = [
   'flour',
   'rose petals',
   'diet soda',
-  'cashew milk',
+  'cashews',
   'pudding',
   'hot pockets',
   'pancake batter',
