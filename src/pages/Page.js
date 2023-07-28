@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import TopBlur from "../components/TopBlur";
 import BottomBlur from "../components/BottomBlur";
+import CatLoader from "../components/CatLoader";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import request from "../request";
@@ -50,7 +51,7 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <div className="text-purple-900 text-3xl pt-6 text-center">loading...</div>}
+        {isLoading && <CatLoader/>}
         {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
         {!isLoading && <div className="text-center text-purple-900 pt-8">{reason}</div>}
       </div>
