@@ -53,7 +53,7 @@ export default function Page() {
         <BottomBlur />
         {isLoading && <CatLoader/>}
         {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
-        {!isLoading && <div className="text-center text-purple-900 pt-8">{reason}</div>}
+        {!isLoading && <div className="text-center text-purple-900 p-8">{reason}</div>}
       </div>
     </main>
   </div>
