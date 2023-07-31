@@ -41,7 +41,7 @@ export default function Page() {
     <TopBlur />
     <NavBar />
     <main>
-      <div className="relative mx-auto h-screen max-w-3xl pt-[25vh]">
+      <div className="relative mx-auto h-screen max-w-3xl pt-[22.5vh]">
         {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
         <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
           can my 🐈 eat{" "}
