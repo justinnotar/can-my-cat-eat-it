@@ -5,21 +5,13 @@
   "dependencies": {
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
-    "@shopify/polaris": "^10.10.1",
-    "@tailwindcss/forms": "^0.4.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "autoprefixer": "^10.4.13",
-    "aws": "^0.0.3-2",
-    "axios": "^1.1.0",
-    "eslint": "^8.27.0",
     "firebase": "^8.6.8",
     "heroicons": "^2.0.13",
     "openai": "^3.1.0",
-    "postcss": "^8.4.18",
-    "prettier": "^2.8.1",
-    "prettier-plugin-tailwindcss": "^0.1.13",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.2.0",
@@ -36,12 +28,7 @@
     "eject": "react-scripts eject",
     "prettier": "prettier --write '**/*.{ts,js,css,html}'"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
+  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,12 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "dotenv": "^16.3.1",
-    "gh-pages": "^5.0.0",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4"
   }
 }
