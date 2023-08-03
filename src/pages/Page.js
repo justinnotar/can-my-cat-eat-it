@@ -41,7 +41,7 @@ export default function Page() {
     <TopBlur />
     <NavBar />
     <main>
-      <div className="relative mx-auto h-screen max-w-3xl pt-[22.5vh]">
+      <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
         {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
         <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
           can my 🐈 eat{" "}
@@ -51,9 +51,9 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <CatLoader/>}
+        {isLoading && <div className="pt-4"><CatLoader/></div>}
         {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
-        {!isLoading && <div className="text-center text-purple-900 p-8">{reason}</div>}
+        {!isLoading && <div className="text-center text-xl text-purple-900 p-8">{reason}</div>}
       </div>
     </main>
   </div>
