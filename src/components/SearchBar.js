@@ -26,7 +26,7 @@ export default function SearchBar() {
             onChange={(event) => {
               setQuery(event.target.value);
             }}
-            className="h-8 w-full bg-transparent p-2 text-gray-800 placeholder-gray-400 outline-0 focus:ring-0"
+            className="h-8 w-full bg-transparent p-2 text-gray-800 placeholder-gray-400 !outline-none"
             placeholder="search"
           />
         </div>

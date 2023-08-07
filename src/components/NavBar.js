@@ -11,15 +11,15 @@ const navigation = [
 export default function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
-    <div className="px-6 pt-6 lg:px-6">
+    <div className="px-6 pt-6 sm:px-6">
       <nav
         className="flex h-9 items-center justify-between"
         aria-label="Global"
       >
-        <div className="flex lg:min-w-0 lg:flex-1" aria-label="Global">
+        <div className="flex sm:min-w-0 sm:flex-1" aria-label="Global">
           <Logo />
         </div>
-        <div className="flex lg:hidden">
+        <div className="flex sm:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-purple-900"
@@ -43,7 +43,7 @@ export default function NavBar() {
             </svg>
           </button>
         </div>
-        <div className="lg:flex-2 hidden lg:flex lg:min-w-0 lg:justify-center lg:gap-x-12">
+        <div className="sm:flex-2 hidden sm:flex sm:min-w-0 sm:justify-center sm:gap-x-12">
           {navigation.map((item) => (
             <a
               key={item.name}
@@ -54,12 +54,12 @@ export default function NavBar() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end"></div>
+        <div className="hidden sm:flex sm:min-w-0 sm:flex-1 sm:justify-end"></div>
       </nav>
       <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <Dialog.Panel
           focus="true"
-          className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 lg:hidden"
+          className="fixed inset-0 z-10 overflow-y-auto bg-white px-6 py-6 sm:hidden"
         >
           <div className="flex h-9 items-center justify-between">
             <div className="flex">
