@@ -37,13 +37,13 @@ export default function Page() {
   }, [food]);
 
   return (
-    <div className="isolate min-h-screen overflow-y-hidden bg-purple-100">
+    <div className="isolate text-center min-h-screen overflow-y-hidden bg-purple-100">
     <TopBlur />
     <NavBar />
     <main>
       <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
-        {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 text-center tracking-tight"> */}
-        <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
+        {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 tracking-tight"> */}
+        <h1 className="p-4 pt-0 text-5xl font-bold text-purple-900">
           can my 🐈 eat{" "}
           <b>
             <i className="text-purple-500">{food}</i>
@@ -51,9 +51,19 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <div className="pt-12 sm:pt-8"><CatLoader/></div>}
-        {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
-        {!isLoading && <div className="text-center text-xl text-purple-900 p-8">{reason}</div>}
+        {isLoading &&
+          <>
+            <div className="pt-12 sm:pt-8 pb-12 sm:pb-8"><CatLoader/></div>
+          <a className="font-bold text-xl text-purple-500" href='/'>cancel</a>
+          </>
+        }
+        {!isLoading && <div className={`font-bold text-5xl pt-4 ${answer}`}>{answer}</div>}
+        {!isLoading && 
+          <>
+            <div className="text-xl text-purple-900 p-8">{reason}</div>
+            <a className="font-bold text-xl text-purple-500" href='/'>have another food in mind?</a>
+          </>
+        }
       </div>
     </main>
   </div>
