@@ -5,6 +5,7 @@ import CatLoader from "../components/CatLoader";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import request from "../request";
+import '../App.css'
 
 export default function Page() {
   const [isLoading, setIsLoading] = useState(true);
@@ -41,9 +42,9 @@ export default function Page() {
     <TopBlur />
     <NavBar />
     <main>
-      <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
+      <div className="relative mx-auto max-w-3xl px-4 pt-[12.5vh]">
         {/* <h1 className="text-5xl pb-4 font-bold text-purple-900 tracking-tight"> */}
-        <h1 className="p-4 pt-0 text-5xl font-bold text-purple-900">
+        <h1 className="text-5xl font-bold text-purple-900">
           can my 🐈 eat{" "}
           <b>
             <i className="text-purple-500">{food}</i>
@@ -52,15 +53,16 @@ export default function Page() {
         </h1>
         <BottomBlur />
         {isLoading &&
-          <>
-            <div className="pt-12 sm:pt-8 pb-12 sm:pb-8"><CatLoader/></div>
-          <a className="font-bold text-xl text-purple-500" href='/'>cancel</a>
-          </>
+          <div className="pt-12">
+            <div className="text-5xl text-purple-900 font-bold">hmm<span className="dot dot1">.</span><span className="dot dot2">.</span><span className="dot dot3">.</span></div>
+            <div className="py-12"><CatLoader/></div>
+            <a className="font-bold text-xl text-purple-500" href='/'>cancel</a>
+          </div>
         }
-        {!isLoading && <div className={`font-bold text-5xl pt-4 ${answer}`}>{answer}</div>}
+        {!isLoading && <div className={`font-bold text-5xl pt-12 ${answer}`}>{answer}</div>}
         {!isLoading && 
           <>
-            <div className="text-xl text-purple-900 p-8">{reason}</div>
+            <div className="text-xl text-purple-900 py-12">{reason}</div>
             <a className="font-bold text-xl text-purple-500" href='/'>have another food in mind?</a>
           </>
         }
