@@ -51,7 +51,7 @@ export default function Page() {
           &nbsp;?
         </h1>
         <BottomBlur />
-        {isLoading && <div className="pt-4"><CatLoader/></div>}
+        {isLoading && <div className="pt-16 sm:pt-8"><CatLoader/></div>}
         {!isLoading && <div className={`font-bold text-5xl pt-4 text-center ${answer}`}>{answer}</div>}
         {!isLoading && <div className="text-center text-xl text-purple-900 p-8">{reason}</div>}
       </div>
