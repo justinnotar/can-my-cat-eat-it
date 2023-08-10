@@ -6,7 +6,7 @@ export default function CatLoader() {
       height="200px"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid"
-      className="m-auto block"
+      className="m-auto block mb-2"
     >
       <g>
         <animateTransform
