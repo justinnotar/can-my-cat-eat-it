@@ -11,11 +11,10 @@ export default function Home() {
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-5xl text-center text-purple-900">
-          {/* <h1 className="text-5xl pb-4 font-bold text-purple-900  tracking-tight"> */}
-          <h1 className="pb-8 pt-10 text-5xl font-bold">about us</h1>
-          <h1 className="text-3xl">
+          <h1 className="pb-8 pt-10 text-5xl font-bold transition-all">about us</h1>
+          <h2 className="text-3xl">
             why was <i>canmycateat.xyz</i> created?
-          </h1>
+          </h2>
           <p className="p-4">
             searching google for a one-word answer to anything can pretty
             difficult, let alone whether a certain food is safe for your cat to
@@ -23,17 +22,17 @@ export default function Home() {
             feline nutrition, yet none that present a simple yes or no answer.
             the goal of this site is to provide you just that.
           </p>
-          <h1 className="text-3xl">
+          <h2 className="text-3xl">
             who created <i>canmycateat.xyz</i>?
-          </h1>
+          </h2>
           <p className="p-4 ">
             <a href="https://notar.dev">
               <u>justin</u>
             </a>{" "}
           </p>
-          <h1 className="text-3xl ">
+          <h2 className="text-3xl ">
             how can i support <i>canmycateat.xyz</i>?
-          </h1>
+          </h2>
           <p className="p-4 ">
             vote for us on{" "}
             <a href="https://notar.dev">
