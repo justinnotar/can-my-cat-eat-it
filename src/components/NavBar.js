@@ -47,7 +47,7 @@ export default function NavBar() {
             <a
               key={item.name}
               href={item.href}
-              className="font-semibold text-purple-900 hover:text-purple-500"
+              className="font-semibold text-purple-900 hover:text-purple-500 transition-all"
             >
               {item.name}
             </a>
@@ -82,7 +82,7 @@ export default function NavBar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-purple-900 hover:bg-purple-400/10"
+                    className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-purple-900 hover:bg-purple-400/10 transition-all"
                   >
                     {item.name}
                   </a>
