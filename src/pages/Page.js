@@ -56,14 +56,14 @@ export default function Page() {
           <div className="pt-12">
             <div className="text-5xl text-purple-900 font-bold">hmm<span className="dot dot1">.</span><span className="dot dot2">.</span><span className="dot dot3">.</span></div>
             <div className="py-12"><CatLoader/></div>
-            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all font-bold py-2.5 px-5 rounded items-center" href="/">cancel</a>
+            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">cancel</a>
           </div>
         }
         {!isLoading && <div className={`font-bold text-5xl pt-12 ${answer}`}>{answer}</div>}
         {!isLoading && 
           <>
             <div className="text-xl text-purple-900 py-12 mb-2">{reason}</div>
-            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all font-bold py-2.5 px-5 rounded items-center mb-2" href="/">have another food in mind?</a>
+            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">have another food in mind?</a>
           </>
         }
       </div>
