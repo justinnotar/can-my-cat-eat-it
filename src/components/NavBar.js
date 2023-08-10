@@ -14,9 +14,8 @@ export default function NavBar() {
     <div className="px-6 pt-6 sm:px-6">
       <nav
         className="flex h-9 items-center justify-between"
-        aria-label="Global"
       >
-        <div className="flex sm:min-w-0 sm:flex-1" aria-label="Global">
+        <div className="flex sm:min-w-0 sm:flex-1">
           <Logo />
         </div>
         <div className="flex sm:hidden">
