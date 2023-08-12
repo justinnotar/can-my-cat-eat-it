@@ -15,7 +15,7 @@ export const pages = [
   'apples',
   'pumpkin',
   'sea salt',
-  'flour',
+  'marshmallow',
   'rose petals',
   'diet soda',
   'cashews',
