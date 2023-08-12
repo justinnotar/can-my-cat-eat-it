@@ -6,11 +6,10 @@ import BottomBlur from "../components/BottomBlur";
 export default function Home() {
   return (
     <div className="relative isolate min-h-screen overflow-y-auto bg-purple-100">
-      <TopBlur />
-      <BottomBlur />
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-5xl text-center text-purple-900">
+          <TopBlur />
           <h1 className="pb-8 pt-10 text-5xl font-bold transition-all">about us</h1>
           <h2 className="text-3xl">
             why was <i>canmycateat.xyz</i> created?
@@ -25,6 +24,7 @@ export default function Home() {
           <h2 className="text-3xl">
             who created <i>canmycateat.xyz</i>?
           </h2>
+          <BottomBlur />
           <p className="p-4 ">
             <a href="https://notar.dev">
               <u>justin</u>

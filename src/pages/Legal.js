@@ -6,11 +6,10 @@ import BottomBlur from "../components/BottomBlur";
 export default function Home() {
   return (
     <div className="relative isolate min-h-screen overflow-y-auto bg-purple-100">
-      <TopBlur />
-      <BottomBlur />
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-5xl text-purple-900">
+          <TopBlur />
           <h1 className="pb-8 pt-10 text-center text-5xl font-bold">
             legal stuff
           </h1>
@@ -56,6 +55,7 @@ export default function Home() {
                 provided on it.
               </li>
             </ol>
+            <BottomBlur />
             <br />
             In addition to the above policies, we also want to make it clear
             that we are not responsible for the accuracy, completeness, or

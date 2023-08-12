@@ -7,11 +7,10 @@ import BottomBlur from "../components/BottomBlur";
 export default function Home() {
   return (
     <div className="isolate min-h-screen overflow-y-hidden bg-purple-100">
-      <TopBlur />
-      <BottomBlur />
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
+          <TopBlur />   
           <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
             can my 🐈 eat{" "}
             <b>
@@ -19,6 +18,7 @@ export default function Home() {
             </b>
             &nbsp;?
           </h1>
+          <BottomBlur />
           <SearchBar />
         </div>
       </main>
