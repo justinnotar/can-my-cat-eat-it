@@ -23,7 +23,7 @@ export default function Page() {
     }
     else answer = 'nope'
     input = input.substring(4)
-    return {answer: answer, input: input}
+    return { answer: answer, input: input }
   }
 
   useEffect(() => {
@@ -39,35 +39,35 @@ export default function Page() {
 
   return (
     <div className="isolate text-center min-h-screen overflow-y-hidden bg-purple-100">
-    <NavBar />
-    <main>
-      <div className="relative mx-auto max-w-3xl px-4 pt-[6.25vh] sm:pt-[12.5vh]">
-        <TopBlur />
-        <h1 className="text-5xl font-bold text-purple-900">
-          can my 🐈 eat{" "}
-          <b>
-            <i className="text-purple-500">{food}</i>
-          </b>
-          &nbsp;?
-        </h1>
-        <BottomBlur />
-        {isLoading &&
-          <div className="pt-12">
-            <div className="text-5xl text-purple-900 font-bold">hmm<span className="dot dot1">.</span><span className="dot dot2">.</span><span className="dot dot3">.</span></div>
-            <div className="py-12"><CatLoader/></div>
-            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">cancel</a>
-          </div>
-        }
-        {!isLoading && <div className={`font-bold text-5xl pt-12 ${answer}`}>{answer}</div>}
-        {!isLoading && 
-          <>
-            <div className="text-xl text-purple-900 py-12 mb-2">{reason}</div>
-            <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">have another food in mind?</a>
-          </>
-        }
-      </div>
-    </main>
-  </div>
+      <NavBar />
+      <main>
+        <div className="relative mx-auto max-w-3xl px-4 pt-[6.25vh] sm:pt-[12.5vh]">
+          <TopBlur />
+          <h1 className="text-5xl font-bold text-purple-900">
+            can my 🐈 eat{" "}
+            <b>
+              <i className="text-purple-500">{food}</i>
+            </b>
+            &nbsp;?
+          </h1>
+          <BottomBlur />
+          {isLoading &&
+            <div className="pt-12">
+              <div className="text-5xl text-purple-900 font-bold">hmm<span className="dot dot1">.</span><span className="dot dot2">.</span><span className="dot dot3">.</span></div>
+              <div className="py-12"><CatLoader /></div>
+              <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">cancel</a>
+            </div>
+          }
+          {!isLoading && <div className={`font-bold text-5xl pt-12 ${answer}`}>{answer}</div>}
+          {!isLoading &&
+            <>
+              <div className="text-xl text-purple-900 py-12 mb-2">{reason}</div>
+              <a class="bg-purple-200 hover:bg-purple-300 font-bold text-xl text-purple-500 transition-all py-2.5 px-5 rounded items-center" href="/">have another food in mind?</a>
+            </>
+          }
+        </div>
+      </main>
+    </div>
   )
 
 }

@@ -10,7 +10,7 @@ export default function Home() {
       <NavBar />
       <main>
         <div className="relative mx-auto max-w-3xl pt-[12.5vh]">
-          <TopBlur />   
+          <TopBlur />
           <h1 className="p-4 pt-0 text-center text-5xl font-bold text-purple-900">
             can my 🐈 eat{" "}
             <b>
