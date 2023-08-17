@@ -24,5 +24,8 @@ export const pages = [
   'pancake batter',
   'bubble gum',
   'zucchini',
-  'bread'
+  'garlic bread',
+  'maple syrup',
+  'basil',
+  'coffee'
 ];
